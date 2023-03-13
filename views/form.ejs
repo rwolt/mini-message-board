@@ -9,11 +9,16 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <form method="POST" action="/new" class="new-message-form">
-      <label for="user">Name:</label>
-      <input type="text" name="name" id="name" />
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5"></textarea>
+    <form method="POST" action="/new" id="new-message-form">
+      <label for="messageUser">Name:</label>
+      <input type="text" name="messageUser" id="messageUser" />
+      <label for="messageText">Message:</label>
+      <textarea
+        form="new-message-form"
+        id="messageText"
+        name="messageText"
+        rows="5"
+      ></textarea>
       <button type="submit">Post Message</button>
     </form>
   </body>
