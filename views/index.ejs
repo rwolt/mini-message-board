@@ -5,14 +5,21 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <a href="/new">Post a Message</a>
-    <% messages.forEach(function(message) { %>
-    <div>
-      <p><%= message.added %></p>
-      <p><%= message.user %></p>
-      <p><%= message.text %></p>
-    </div>
-    <% }); %>
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <main>
+      <a href="/new">
+        <button class="new-post-button">Post a Message</button>
+      </a>
+      <% messages.sort((a,b) => b.added - a.added ).forEach(function(message) {
+      %>
+      <div class="message-card">
+        <p class="message-name"><%= message.user %></p>
+        <p class="message-date"><%= format((message.added), 'PP pp') %></p>
+        <p><%= message.text %></p>
+      </div>
+      <% }); %>
+    </main>
   </body>
 </html>

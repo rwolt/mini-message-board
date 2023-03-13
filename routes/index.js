@@ -1,4 +1,6 @@
 var express = require("express");
+const format = require("date-fns/format");
+
 var router = express.Router();
 
 const messages = [
@@ -16,7 +18,11 @@ const messages = [
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Mini Message Board", messages: messages });
+  res.render("index", {
+    title: "Mini Message Board",
+    messages: messages,
+    format: format,
+  });
 });
 
 router.get("/new", function (req, res) {
@@ -25,7 +31,11 @@ router.get("/new", function (req, res) {
 
 router.post("/new", function (req, res) {
   const { messageUser, messageText } = req.body;
-  messages.push({ text: messageText, user: messageUser, added: new Date() });
+  messages.push({
+    text: messageText,
+    user: messageUser,
+    added: new Date(),
+  });
   res.redirect("/");
 });
 

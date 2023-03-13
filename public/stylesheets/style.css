@@ -1,6 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  background-color: #1986fa;
+  color: white;
+  height: 5rem;
+  font-size: 1.2rem;
+}
+
+header > h1 {
+  margin: 0 0 0 25vw;
+}
+
+main {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
@@ -10,20 +37,51 @@ a {
 #new-message-form {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 50%;
   font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 form > input,
 form > textarea {
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-button[type="submit"] {
-  width: 30%;
+button {
+  /* width: 30%; */
+  background-color: #faa719;
+  border: none;
+  border-radius: 5px;
+  color: white;
   align-self: flex-end;
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #e09719;
+}
+
+.new-post-button {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
+.message-card {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 50%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.message-date,
+.message-name {
+  font-weight: bold;
+  color: #777;
+  margin: 0;
 }
